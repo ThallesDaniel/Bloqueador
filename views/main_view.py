@@ -22,9 +22,12 @@ class MainView(ft.UserControl):
         self.update()
     
     def show_add_site_dialog(self, e):
-        self.dialog = AddSiteView(on_site_added=self.update_sites)
-        self.dialog.open(self)
-    
+        # Define o diálogo para ser exibido na página
+        add_site_dialog = AddSiteView(on_site_added=self.update_sites)
+        self.page.dialog = add_site_dialog.build()
+        self.page.dialog.open = True
+        self.page.update()
+
     def build(self):
         self.site_table = ft.Column()
         return ft.Column(
