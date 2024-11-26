@@ -8,7 +8,7 @@ services:
       - "27017:27017"  # Expõe a porta 27017 para o host
     networks:
       - blocker_network
-    volumes:
+    volumes: 
       - mongodb_data:/data/db  # Mantém os dados do MongoDB persistentes
 
 networks:
